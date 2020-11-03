@@ -8,5 +8,7 @@ import com.learning.springsecurity.models.Employee;
 
 @Component
 public interface IEmployeeDao extends CrudRepository<Employee, Integer> {
+	
+	Employee findByEmpName(String empName);
 
 }

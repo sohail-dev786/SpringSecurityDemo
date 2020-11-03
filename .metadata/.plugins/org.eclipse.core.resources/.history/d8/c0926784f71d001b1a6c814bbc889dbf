@@ -1,0 +1,34 @@
+package com.learning.springsecurity.securityconfig;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.learning.springsecurity.models.Employee;
+import com.learning.springsecurity.services.IEmployeeDao;
+
+public class EmployeeDetailsService implements UserDetailsService {
+
+	
+	@Autowired
+	IEmployeeDao empDao;
+	
+	
+	
+	@Override
+	public UserDetails loadUserByUsername(String empName) throws UsernameNotFoundException {
+	
+		Employee employee=empDao.findByEmpName(empName);
+		
+		if(employee!=null)
+		{
+			return new EmpDetails(employee);
+		}
+		else
+		{
+	 throw new UsernameNotFoundException("User Not Found");		
+		}
+	}
+
+}
