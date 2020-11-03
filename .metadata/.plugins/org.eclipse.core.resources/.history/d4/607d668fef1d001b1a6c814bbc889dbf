@@ -1,0 +1,15 @@
+spring.mvc.view.prefix=/views/
+spring.mvc.view.suffix=.jsp
+
+
+spring.h2.console.enabled=true
+spring.datasource.platform=h2
+spring.datasource.url=jdbc:h2:tcp://localhost/~/test
+spring.datasource.username=sa
+spring.jpa.hibernate.ddl-auto=update
+
+
+
+spring.security.user.name=Sohail
+spring.security.user.password=12345
+spring.security.user.roles=Manager

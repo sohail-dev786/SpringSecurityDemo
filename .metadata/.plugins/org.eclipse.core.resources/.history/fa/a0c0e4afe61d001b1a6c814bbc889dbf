@@ -1,0 +1,15 @@
+package com.learning.springsecurity.controller;
+
+
+@Controller
+public class EmployeeController {
+	
+	
+	@GetMapping("/")
+	public String index()
+	{
+		return "index";
+	}
+	
+	
+}

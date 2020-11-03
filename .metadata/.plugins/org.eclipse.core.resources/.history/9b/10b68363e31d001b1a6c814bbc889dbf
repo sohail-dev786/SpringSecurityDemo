@@ -1,0 +1,7 @@
+package com.learning.springsecurity;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface IEmployeeDao extends CrudRepository<T, ID> {
+
+}
